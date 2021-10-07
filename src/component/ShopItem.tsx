@@ -1,7 +1,13 @@
 import React from "react";
 import "./ShopItem.css";
 
-const ShopItem = ({ name, price, onPut }) => {
+type ShopItemProps = {
+  name: string;
+  price: number;
+  onPut: (name: string, price: number) => void;
+};
+
+const ShopItem = ({ name, price, onPut }: ShopItemProps) => {
   return (
     <div className="ShopItem" onClick={() => onPut(name, price)}>
       <h4>{name}</h4>
@@ -9,5 +15,4 @@ const ShopItem = ({ name, price, onPut }) => {
     </div>
   );
 };
-
 export default ShopItem;

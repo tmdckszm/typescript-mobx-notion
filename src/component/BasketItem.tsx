@@ -1,7 +1,14 @@
 import React from "react";
 import "./BasketItem.css";
 
-const BasketItem = ({ name, price, count, onTake }) => {
+type BasketItemProps = {
+  name: string;
+  price: number;
+  count: number;
+  onTake: (name: string) => void;
+};
+
+const BasketItem = ({ name, price, count, onTake }: BasketItemProps) => {
   return (
     <div className="BasketItem">
       <div className="name">{name}</div>

@@ -26,7 +26,7 @@ const ShopItemList = () => {
   // **** useStore에서 market 연결
   const { market } = useStore();
 
-  const onPut = (name, price) => {
+  const onPut = (name: string, price: number) => {
     market.put(name, price);
   };
 
