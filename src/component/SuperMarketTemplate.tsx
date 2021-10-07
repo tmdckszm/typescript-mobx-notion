@@ -1,7 +1,12 @@
 import React from "react";
 import "./SuperMarketTemplate.css";
 
-const SuperMarketTemplate = ({ items, baskets }) => {
+type ISuperMarketTemplateProps = {
+  items: JSX.Element;
+  baskets: JSX.Element;
+};
+
+const SuperMarketTemplate = ({ items, baskets }: ISuperMarketTemplateProps) => {
   return (
     <div className="SuperMarketTemplate">
       <div className="items-wrapper">

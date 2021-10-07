@@ -3,15 +3,23 @@ import BasketItem from "./BasketItem";
 import { useObserver } from "mobx-react";
 import useStore from "../useStore";
 
+interface IitemListProps {
+  name: string;
+  price: number;
+  count: number;
+  key: string;
+  onTake: (name: string) => void;
+}
+
 const BasketItemList = () => {
   const { market } = useStore();
 
-  const onTake = (name) => {
+  const onTake = (name: string) => {
     market.take(name);
   };
 
   return useObserver(() => {
-    const itemList = market.selectedItems.map((item) => (
+    const itemList = market.selectedItems.map((item: IitemListProps) => (
       <BasketItem
         name={item.name}
         price={item.price}
